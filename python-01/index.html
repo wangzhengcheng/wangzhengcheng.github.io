@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="wangzhengcheng">
+
+
+
+
+
+<title>自学Python-01 环境搭建 | wangzhnegcheng</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">wangzhengcheng&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">wangzhengcheng&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">自学Python-01 环境搭建</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">wangzhengcheng</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">June 28, 2020&nbsp;&nbsp;10:18:47</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Python/">Python</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><h4 id="1-window系统"><a href="#1-window系统" class="headerlink" title="1.    window系统"></a>1.    window系统</h4><p>官网下载地址：<a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a></p>
+<p>安装页面有”add python 3.7 to PATH”,勾选该选项就不需要自己手动再配置环境变量了</p>
+<p>验证是否安装成功，打开命令行窗口，输入”python”命令，出现版本号即安装成功</p>
+<h4 id="2-mac系统"><a href="#2-mac系统" class="headerlink" title="2.mac系统"></a>2.mac系统</h4><p>一般自带2.x版本，建议安装最新版本，官网下载地址:<a href="https://www.python.org/downloads/mac-osx/" target="_blank" rel="noopener">https://www.python.org/downloads/mac-osx/</a></p>
+<p>但我推荐使用Homebrew下载，Homebrew是mac上很强大的包管理工具，没有安装可以将以下命令粘贴至终端进行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>安装之后执行命令</p>
+<p> <code>brew install python3</code></p>
+<p>输入 <code>python3</code> 查看版本信息，安装完成。</p>
+<p>用Homebrew是不是很方便，还有个好处是不用手动配置环境变量，Homebrew会帮我们完成。</p>
+<h3 id="二、开发工具"><a href="#二、开发工具" class="headerlink" title="二、开发工具"></a>二、开发工具</h3><p>Sublime 、VSCode、PyCharm都不错，个人喜欢用VSCode，或者学习期间用记事本写都行。</p>
+<h3 id="三、第一个python"><a href="#三、第一个python" class="headerlink" title="三、第一个python"></a>三、第一个python</h3><p>打开文本编辑器，输入 <code>print(&quot;hello&quot;)</code> 保存文件为hello.py,后缀是py</p>
+<p>运行，打开命令行终端到文件根目录下，执行python3 hello.py 运行命令很简单，使用 <code>python3</code> 命令+文件名即可</p>
+<p>输出结果为”hello”</p>
+<p><img src="/python-01/image-20200628114549117.png" alt="image-20200628114549117"></p>
+<p><img src="/python-01/image-20200628114606093.png" alt="image-20200628114606093"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>wangzhengcheng</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://wangzhengcheng.github.io/python-01/">http://wangzhengcheng.github.io/python-01/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Python/"># Python</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© wangzhengcheng | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
